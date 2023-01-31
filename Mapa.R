@@ -2,10 +2,6 @@ install.packages(c("tidyverse", "readxl", "rnaturalearth", "rnaturalearthdata", 
 library(tidyverse)
 library(rnaturalearth)
 library(rnaturalearthdata)
-library(ggrepel)
-library(showtext)
-font_add_google("Encode Sans", family = "Encode Sans")
-showtext_auto()
 
 world_map_data <- ne_countries(returnclass = "sf") %>% filter(!name == "Antarctica")
 
