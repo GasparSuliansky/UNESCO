@@ -1,0 +1,22 @@
+library(dplyr)
+library(ggplot2)
+library(sf)
+
+locations <- data.frame(
+  #location = c("Falda del Cañete", "Punta Indio", "Bahía Blanca", "Tolhuin", "Malargüe", "Loncopué", "", ""), stringsAsFactors = FALSE,
+  longitude = c(-64.4387, -57.0993, -62.2724, -67.1951, -69.5833, -70.6394, -71.1967, -57.9484),
+  latitude = c(-31.6475, -35.1568, -38.7196, -54.5175, -35.4667, -38.0722, -40.8639, -34.6049)
+)
+
+shp_prov <- read_sf("/Users/gasparsuliansky/Downloads/DEPARTAMENTOS 1869-2010/Cartografia/PROVINCIAS_1960_ACT.shp")
+
+shp_prov |>
+  ggplot() +
+  geom_sf() +
+  geom_point(data = locations, aes(x = longitude, y = latitude), size = 2.5, alpha = 0.7, col = "#0099CC") +
+  #ggrepel::geom_text_repel(data = locations, aes(x = longitude, y = latitude, label = location), position = position_jitter(), family = "encode sans", col = "black", size = 3, segment.color = "transparent") +
+  theme_void() +
+  coord_sf(datum = NA) +
+  xlim(-80, -50) +
+  ylim(-58, -20) +
+  theme(legend.title = element_blank())
