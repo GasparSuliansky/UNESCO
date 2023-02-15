@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{fontspec}
+\setmainfont{[EncodeSans-Regular.ttf]}
+\newfontfamily{\bold}{EncodeSans-Bold.ttf}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+% Draw the timeline
+\draw[line width=0.25mm, <-] (-3em, 0) -- (-0.7em, 0);
+\draw[line width=0.25mm, -] (0.7em, 0) -- (4.3em, 0);
+\draw[line width=0.25mm, -] (5.7em, 0) -- (10.3em, 0);
+\draw[line width=0.25mm, -] (11.7em, 0) -- (15.3em, 0);
+\draw[line width=0.25mm, -] (16.7em, 0) -- (21.3em, 0);
+\draw[line width=0.25mm, -] (22.7em, 0) -- (26.3em, 0);
+\draw[line width=0.25mm, ->] (27.7em, 0) -- (30em, 0);
+
+
+
+% Add the years as labels
+\node at (0em,0) {\tiny \bold{1994}};
+\node at (5em,0) {\tiny \bold{1999}};
+\node at (11em,0) {\tiny \bold{2005}};
+\node at (16em,0) {\tiny \bold{2010}};
+\node at (22em,0) {\tiny \bold{2016}};
+\node at (27em,0) {\tiny \bold{2021}};
+
+% Add the arrows and text labels
+% node[above, scale = 0.75]
+% \node at (6, 3.5) {\centering \small Misiones espaciales};
+
+\draw[->] (0em,1.5) -- (0em,0.25);
+\node[above, align = center] at (0em,1.5) {\tiny\tiny Aprobación del \\[-5pt] \tiny Plan Espacial Nacional (1995-2006)};
+
+\draw[->] (5em, -0.75) -- (5em,-0.25);
+\node[below, align = center] at (5em,-0.75) {\tiny Aprobación de la 1era revisión \\[-5pt] \tiny del Plan Espacial Nacional (1997-2008)};
+
+\draw[->] (11em,0.75) -- (11em,0.25);
+\node[above, align = center] at (11em,0.75) {\tiny Aprobación de la 2da revisión \\[-5pt] \tiny del Plan Espacial Nacional (2004-2015)};
+
+\draw[->] (16em,-1.5) -- (16em,-0.25);
+\node[below, align = center]  at (16em,-1.5) {\tiny Actualización del \\[-5pt] \tiny Plan Espacial Nacional (2010-2015)};
+
+\draw[->] (22em, 1.5) -- (22em,0.25);
+\node[above, align = center] at (22em,1.5) {\tiny Elaboración de la 3era revisión \\[-5pt] \tiny del Plan Espacial Nacional (2016-2027)};
+
+\draw[->] (27em,-0.75) -- (27em,-0.25);
+\node[below, align = center] at (27em,-0.75) {\tiny Elaboración de la 4ta revisión \\[-5pt] \tiny del Plan Espacial Nacional (2021-2030)};
+
+\end{tikzpicture}
+
+\end{document}
