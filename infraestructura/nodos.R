@@ -3,22 +3,6 @@ library(showtext)
 font_add_google("Encode Sans", "Encode sans")
 showtext_auto()
 
-# CEATSA: "Espacial" (1), "Aaeronáutica" (2), "Automotriz" (3), "Electrónica" (4), "Defensa" (5), "Energía" (6), "Aerogeneradores" (7), "Nuclear" (8), "Radares" (9)
-# UNLP: "Espacial" (1),"Aeronáutica" (2) "Automotriz" (3), "Eléctrica" (10), "Electrónica" (4), "Metalmecánica" (11), "Radares" (9), "Defensa" (5), "Energía" (6)
-# CONAE/VENG: "Espacial" (1), "Aeronáutica" (2), "Automotriz" (3), "Tecnológica" (12)
-# Espacial: 3
-# Aaeronáutica: 3
-# Automotriz: 3
-# Electrónica: 2
-# Defensa: 2
-# Energía: 2 
-# Aerogeneradores: 1
-# Nuclear: 1
-# Radares: 2
-# Eléctrica: 1
-# Metalmecánica: 1
-# Tecnológica: 1
-
 nodes <- create_node_df(
   n = 15,
   type = "numbered",
@@ -32,9 +16,6 @@ nodes <- create_node_df(
   fillcolor = c("#0099CC80", "#0099CC80", "#0099CC80", "#0099CC80", "#0099CC80", "#0099CC80", "#0099CC80", "#0099CC80", "#0099CC80", "#0099CC80", "#0099CC80", "#0099CC80", "#0099CC", "#0099CC", "#0099CC"),
   fontcolor = "black",
   penwidth = 0.5
-  #,
-  #x = c(rep(3, 12), rep(0, 3)),
-  #y = c(sample(seq(-2, 5, 7/11)), 0, 1.5, 3)
     )
 
 nodes$fillcolor <- adjustcolor(nodes$fillcolor, alpha.f = 0.9)
@@ -51,7 +32,3 @@ edges <- create_edge_df(
 graph <- create_graph(nodes_df = nodes, edges_df = edges)
             
 render_graph(graph)
-
-#export_graph(graph, file_name = "nodos.svg")
-
-
